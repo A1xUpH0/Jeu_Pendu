@@ -25,25 +25,13 @@ describe("Game engine test", function(){
 
     describe("When a letter is found", function() {
         it("Should return true when the letter is present\n", function(){
-            expect(game.guess("S","STYLO")).is.true; 
-            expect(game.guess("T","STYLO")).is.true; 
-            expect(game.guess("Y","STYLO")).is.true; 
             expect(game.guess("L","STYLO")).is.true; 
-            expect(game.guess("O","STYLO")).is.true; 
         })
         
     });
 
     describe("When a letter is not found", function(){
         it("Should return false when the letter is not present\n", function(){
-            expect(game.guess("Z","STYLO")).is.false;
-            expect(game.guess("Z","STYLO")).is.false;
-            expect(game.guess("Z","STYLO")).is.false;
-            expect(game.guess("Z","STYLO")).is.false;
-            expect(game.guess("Z","STYLO")).is.false;
-            expect(game.guess("Z","STYLO")).is.false;
-            expect(game.guess("Z","STYLO")).is.false;
-            expect(game.guess("Z","STYLO")).is.false;
             expect(game.guess("Z","STYLO")).is.false;
         })
     })

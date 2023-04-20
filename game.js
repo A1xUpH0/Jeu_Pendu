@@ -96,12 +96,9 @@ class Game {
         for (let letterIndex in word){
             if(oneLetter === word[letterIndex]){
                 isPresent = true;
-                this.changeFoundedLetter(word[letterIndex], letterIndex, word);
+                this.changeFoundedLetter(word[letterIndex], letterIndex);
             }
         }
-        if (isPresent == false){
-                this.LoseHealthPoint();
-            }
         return isPresent;
     }
 
@@ -110,7 +107,7 @@ class Game {
      * @param {string} letter 
      * @param {int} index 
      */
-    changeFoundedLetter(letter, index, word){
+    changeFoundedLetter(letter, index){
         if (foundedWord === ""){
             for (let i = 0; i < word.length; i++){
                 foundedWord += "_"
@@ -126,25 +123,7 @@ class Game {
      * Should print the founded letters in the word
      */
     printWord(){
-        console.log("\nYOUR WORD\n| " + foundedWord + " |\n");
-    }
-
-    /**
-     * Should decrement the "healthPoint" variable
-     */
-    LoseHealthPoint(){
-        this.healthPoint --;
-        console.log(healthPoint);
-        if (this.healthPoint == 0){
-            this.gameOver();
-        }
-    }
-
-    /**
-     * Should stop the game when the number of tries is too big
-     */
-    gameOver(){
-        console.log("YOU LOSE");
+        console.log("\n YOUR WORD\n| " + foundedWord + " |\n");
     }
 
 }
