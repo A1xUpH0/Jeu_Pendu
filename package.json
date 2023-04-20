@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "chai": "^4.3.7",
+    "csv-parser": "^3.0.0",
     "mocha": "^10.2.0",
     "nyc": "^15.1.0"
   }
