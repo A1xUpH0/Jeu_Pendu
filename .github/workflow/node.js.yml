@@ -1,0 +1,22 @@
+name: test
+concurrency: production
+
+on:
+  push:
+    branches: [main_branch]
+  pull_request:
+    branches: [main_branch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use node.js 19.x
+      uses: actions/setup-node@v2
+      with:
+        node-version: '19'
+        cache: 'npm'
+
+    - run: npm ci
+    - run: npm run test
